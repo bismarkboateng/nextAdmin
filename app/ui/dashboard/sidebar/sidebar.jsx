@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { MdLogout } from "react-icons/md";
 
 import { menuItems } from "@/lib/data";
 import MenuLink from "./menuLink/menuLink";
@@ -29,6 +30,11 @@ export default function Sidebar() {
           </li>
         ))}
       </ul>
+      <button className="p-5 my-1 flex items-center gap-5 cursor-pointer bg-none border-none w-full
+      text-white hover:bg-[#2e374a]">
+       <MdLogout />
+       Logout
+      </button>
     </aside>
   );
 }

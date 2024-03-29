@@ -19,10 +19,10 @@ export default function Navbar() {
         <input
          type="text"
          placeholder="Search..."
-         className="transparent border-none text-[#b7bac1]"
+         className="transparent border-none text-[#b7bac1] bg-transparent outline-none"
         />
        </div>
-       <div className="flex">
+       <div className="flex gap-5">
         <MdOutlineChat fontSize={20} />
         <MdNotifications fontSize={20} />
         <MdPublic fontSize={20} />

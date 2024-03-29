@@ -4,7 +4,7 @@ import {
     MdShoppingBag, MdAttachMoney,
     MdWork, MdAnalytics,
     MdPeople, MdOutlineSettings,
-    MdHelpCenter, MdLogout
+    MdHelpCenter
   } from "react-icons/md"
 
 export const menuItems = [
