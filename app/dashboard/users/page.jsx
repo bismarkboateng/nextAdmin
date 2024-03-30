@@ -3,6 +3,7 @@ import Image from "next/image";
 import Search from "@/app/ui/dashboard/search/search";
 import Pagination from "@/app/ui/dashboard/pagination/pagination";
 import { fetchUsers } from "@/lib/fetchData";
+import { deleteUser } from "@/lib/actions";
 
 
 
@@ -64,10 +65,12 @@ export default async function UsersPage({ searchParams }) {
                   <button className={`py-[5px] px-[10px] rounded-[5px] text-white border-none
                   cursor-pointer bg-teal-500`}>View</button>
                 </Link>
-                <Link href="">
+                <form action={deleteUser}>
+                  <input type="hidden" name="id" value={user.id} />
                   <button className={`py-[5px] px-[10px] rounded-[5px] text-white border-none
                   cursor-pointer bg-red-500`}>Delete</button>
-                </Link>
+                </form>
+
               </td>
             </tr>
           ))}

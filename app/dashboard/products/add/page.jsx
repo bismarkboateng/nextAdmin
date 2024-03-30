@@ -1,3 +1,4 @@
+import { addProduct } from "@/lib/actions";
 import React from "react";
 
 export default function AddProductPage() {
@@ -5,7 +6,7 @@ export default function AddProductPage() {
     "p-[30px] w-[45%] bg-transparent text-white rounded-md mb-8 border-2 border-[#2e374a] outline-none";
   return (
     <section className="bg-[#182237] p-5 rounded-md mt-5">
-      <form action="" className="flex flex-wrap justify-between">
+      <form action={addProduct} className="flex flex-wrap justify-between">
         <input
           className={inputStyles}
           type="text"

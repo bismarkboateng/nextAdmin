@@ -4,6 +4,7 @@ import Image from "next/image";
 import Search from "@/app/ui/dashboard/search/search";
 import Pagination from "@/app/ui/dashboard/pagination/pagination";
 import { fetchProducts } from "@/lib/fetchData";
+import { deleteProduct } from "@/lib/actions";
 
 export default async function ProductPage({searchParams}) {
   const q = searchParams?.query || ""
@@ -52,17 +53,19 @@ export default async function ProductPage({searchParams}) {
             </td>
             <td className={tdStyles}>{product.desc}</td>
             <td className={tdStyles}>${product.price}</td>
-            <td className={tdStyles}>{product.createdAt?.toString().splice(4, 16)}</td>
+            <td className={tdStyles}>{product.createdAt?.toString().slice(4, 16)}</td>
             <td className={tdStyles}>{product.stock}</td>
             <td className={`${tdStyles} flex items-center gap-3`}>
               <Link href={`/dashboard/products/${product.id}`}>
                <button className={`py-[5px] px-[10px] rounded-[5px] text-white border-none
                cursor-pointer bg-teal-500`}>View</button>
               </Link>
-              <Link href="">
-               <button className={`py-[5px] px-[10px] rounded-[5px] text-white border-none
-               cursor-pointer bg-red-500`}>Delete</button>
-              </Link>
+               <form action={deleteProduct}>
+                <input type="hidden" name="id" value={product.id} />
+                <button className={`py-[5px] px-[10px] rounded-[5px] text-white border-none
+                cursor-pointer bg-red-500`}>Delete</button>
+               </form>
+  
             </td>
           </tr>
           ))}

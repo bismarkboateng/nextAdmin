@@ -1,11 +1,14 @@
+import { addUser } from "@/lib/actions";
 
 
 export default function AddUsersPage() {
   const inputStyles =
     "p-[30px] w-[45%] bg-transparent text-white rounded-md mb-8 border-2 border-[#2e374a] outline-none bg-[#151c2c]";
+
+
   return (
     <section className="bg-[#182237] p-5 rounded-md mt-5">
-      <form action="" className="flex flex-wrap justify-between">
+      <form action={addUser} className="flex flex-wrap justify-between">
         <input
           className={inputStyles}
           type="text"
@@ -39,7 +42,7 @@ export default function AddUsersPage() {
           className="p-[30px] bg-transparent rounded-md mb-8 border-2 border-[#2e374a]
         outline-none w-[45%] bg-[#151c2c]"
         >
-          <option value={false} selected>isAdmin?</option>
+          <option value={false}>isAdmin?</option>
           <option value={true}>Yes</option>
           <option value={false}>No</option>
         </select>
@@ -49,7 +52,7 @@ export default function AddUsersPage() {
           className="p-[30px] bg-transparent rounded-md mb-8 border-2 border-[#2e374a]
         outline-none w-[45%] bg-[#151c2c]"
         >
-          <option value={true} selected>isActive?</option>
+          <option value={true}>isActive?</option>
           <option value={true}>Yes</option>
           <option value={false}>No</option>
         </select>
