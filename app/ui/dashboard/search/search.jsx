@@ -12,6 +12,9 @@ export default function Search({ placeholder }) {
   
   const handleSearch = (event) => {
     const params = new URLSearchParams(searchParams)
+
+    params.set("page", 1)
+    
     if (event.target.value) {
       params.set("q", event.target.value)
     } else {

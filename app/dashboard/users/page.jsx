@@ -9,7 +9,8 @@ import { fetchUsers } from "@/lib/fetchData";
 
 export default async function UsersPage({ searchParams }) {
   const q = searchParams?.query || ""
-  const users = await fetchUsers(q)
+  const page = searchParams?.page || 1
+  const {count, users} = await fetchUsers(q, page)
 
   console.log(users)
 
@@ -72,7 +73,7 @@ export default async function UsersPage({ searchParams }) {
           ))}
         </tbody>
       </table>
-      <Pagination />
+      <Pagination count={count} />
     </section>
   );
 }
