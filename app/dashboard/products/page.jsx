@@ -9,7 +9,7 @@ export default function ProductPage() {
     <section className="bg-[#182237] p-5 rounded-md mt-5">
       <div className="flex flex-row items-center justify-between">
         <Search placeholder="Search for a product" />
-        <Link href="/dashboard/product/add">
+        <Link href="/dashboard/products/add">
           <button
             className="p-3 bg-[#5d57c9] text-white border-none rounded-md
         cursor-pointer"
@@ -48,7 +48,7 @@ export default function ProductPage() {
             <td className={tdStyles}>14.04.2024</td>
             <td className={tdStyles}>72</td>
             <td className={`${tdStyles} flex items-center gap-3`}>
-              <Link href="">
+              <Link href="/dashboard/products/productid">
                <button className={`py-[5px] px-[10px] rounded-[5px] text-white border-none
                cursor-pointer bg-teal-500`}>View</button>
               </Link>
